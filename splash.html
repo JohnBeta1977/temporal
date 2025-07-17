@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Bienvenido - MiTienda</title>
+  <meta name="theme-color" content="#d97706">
+  <link rel="manifest" href="manifest.json">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: linear-gradient(#facc15, #fbbf24);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+    .loader {
+      animation: pulse 2s infinite;
+      width: 120px;
+      height: 120px;
+    }
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+    .install-banner {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(to right, #1e3a8a, #000);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+    }
+    .install-banner button {
+      background-color: #facc15;
+      color: #000;
+      padding: 0.5rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .install-banner button:hover {
+      background-color: #eab308;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="carga.gif" alt="Cargando..." class="loader">
+
+  <div class="install-banner" id="installBanner" style="display: none;">
+    <span>Somos tu amigo, descárgala aquí</span>
+    <button onclick="installApp()">Instalar App</button>
+  </div>
+
+  <script>
+    let deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      document.getElementById('installBanner').style.display = 'flex';
+    });
+
+    function installApp() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(() => {
+          deferredPrompt = null;
+          document.getElementById('installBanner').style.display = 'none';
+        });
+      }
+    }
+
+    // Redirige automáticamente a index.html después de 3 segundos
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 3000);
+  </script>
+</body>
+</html>

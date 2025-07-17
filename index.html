@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tienda online de productos de tecnología, hogar, ropa y más.">
+    <meta property="og:title" content="Tienda Online">
+    <meta property="og:description" content="Encuentra los mejores productos online, desde tecnología hasta hogar.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/JohnBeta1977/tm/refs/heads/main/logo_01.png">
+    <meta property="og:url" content="https://www.tiendaonline.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#FFAA00">
+    <title>Tienda Online</title>
+    <link rel="manifest" href="/manifest/manifest.json">
+    <link rel="icon" href="https://raw.githubusercontent.com/JohnBeta1977/tm/refs/heads/main/logo_01.png">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Splash screen -->
+    <div id="splash-screen">
+        <img src="images/splash-image.png" alt="Logo" id="splash-icon">
+    </div>
+    
+    <!-- Main content -->
+    <header id="header">
+        <nav id="navbar">
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#categorias">Categorías</a>
+                    <ul>
+                        <li><a href="#tecnologia">Tecnología</a></li>
+                        <li><a href="#hogar">Hogar</a></li>
+                        <li><a href="#ropa">Ropa</a></li>
+                        <li><a href="#usados">Usados</a></li>
+                    </ul>
+                </li>
+                <li><a href="#ofertas">Ofertas del Día</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#faq">Preguntas Frecuentes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Product Listing -->
+    <section id="productos">
+        <div class="producto" onclick="mostrarModal(1)">
+            <img src="images/producto1.jpg" alt="Producto 1">
+            <h3>Producto 1</h3>
+            <p>$100</p>
+            <button class="comprar-btn" onclick="comprarProducto('Producto 1', 100)">Comprar</button>
+        </div>
+        <div class="producto" onclick="mostrarModal(2)">
+            <img src="images/producto2.jpg" alt="Producto 2">
+            <h3>Producto 2</h3>
+            <p>$200</p>
+            <button class="comprar-btn" onclick="comprarProducto('Producto 2', 200)">Comprar</button>
+        </div>
+        <!-- Más productos aquí -->
+    </section>
+
+    <!-- Modal de Producto -->
+    <div id="modal-producto" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">×</span>
+            <img id="modal-imagen" src="" alt="Imagen producto">
+            <h3 id="modal-nombre"></h3>
+            <p id="modal-descripcion"></p>
+            <p id="modal-precio"></p>
+            <button class="comprar-btn" onclick="comprarProducto()">Comprar</button>
+            <button class="compartir-btn" onclick="compartirProducto()">Compartir</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Tienda Online - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

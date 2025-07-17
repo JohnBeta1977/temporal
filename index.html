@@ -2,24 +2,18 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Mi Tienda Online | Calidad y Confianza</title>
     <meta name="description" content="La mejor tienda online con ofertas increíbles en hogar, tecnología, ropa y mucho más. ¡Calidad garantizada y envíos a todo el país!">
     <meta name="keywords" content="tienda online, ecommerce, ofertas, tecnología, ropa, hogar, comprar online">
-    <meta name="author" content="Tu Nombre o Empresa">
     
     <meta property="og:title" content="Mi Tienda Online | Calidad y Confianza">
     <meta property="og:description" content="Descubre ofertas únicas en nuestra tienda. ¡La mejor calidad al mejor precio!">
     <meta property="og:image" content="https://raw.githubusercontent.com/JohnBeta1977/tm/refs/heads/main/logo_01.png">
     <meta property="og:url" content="https://tu-sitio-web.com">
     <meta property="og:type" content="website">
-    
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mi Tienda Online | Calidad y Confianza">
-    <meta name="twitter:description" content="Descubre ofertas únicas en nuestra tienda. ¡La mejor calidad al mejor precio!">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/JohnBeta1977/tm/refs/heads/main/logo_01.png">
-    
     <meta name="theme-color" content="#FFD600">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -55,12 +49,11 @@
             <a href="#contacto">Contacto</a>
             <a href="#faq">Preguntas Frecuentes</a>
         </nav>
-        <div class="mobile-menu-icon">
-            <span>&#9776;</span> </div>
+        <div class="mobile-menu-icon"><span>&#9776;</span></div>
     </header>
 
     <main>
-        <section id="ofertas">
+        <section id="ofertas" class="category-section">
             <h2 class="category-title">🔥 <b>Ofertas del día</b></h2>
             <div class="product-grid">
                 </div>
@@ -71,8 +64,40 @@
         <section id="ropa" class="category-section"><h2 class="category-title">👕 <b>Ropa</b></h2></section>
         <section id="varios" class="category-section"><h2 class="category-title">✨ <b>Varios</b></h2></section>
         <section id="usados" class="category-section"><h2 class="category-title">♻️ <b>Usados</b></h2></section>
-        <section id="contacto" class="category-section"><h2 class="category-title">✉️ <b>Contacto</b></h2></section>
-        <section id="faq" class="category-section"><h2 class="category-title">❓ <b>Preguntas Frecuentes</b></h2></section>
+
+        <section id="contacto" class="category-section content-section">
+            <h2 class="category-title">✉️ <b>Contacto</b></h2>
+            <p>¿Tienes alguna duda o quieres saber más sobre un producto? ¡Estamos aquí para ayudarte! Puedes contactarnos a través de los siguientes medios:</p>
+            <div class="contact-info">
+                <p><b>WhatsApp:</b> <a href="https://wa.me/573205893469" target="_blank">+57 320 5893469</a></p>
+                <p><b>Email:</b> <a href="mailto:soporte@mitienda.com">soporte@mitienda.com</a></p>
+                <p><b>Horario de atención:</b> Lunes a Viernes de 9:00 AM a 6:00 PM</p>
+            </div>
+        </section>
+
+        <section id="faq" class="category-section content-section">
+            <h2 class="category-title">❓ <b>Preguntas Frecuentes</b></h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">¿Cómo puedo comprar un producto?</button>
+                    <div class="faq-answer">
+                        <p>Es muy fácil. Simplemente haz clic en el botón "Comprar" del producto que te interesa. Esto te redirigirá a nuestro WhatsApp con un mensaje pre-escrito. Uno de nuestros asesores te atenderá en minutos para finalizar la compra.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">¿Qué métodos de pago aceptan?</button>
+                    <div class="faq-answer">
+                        <p>Aceptamos transferencias a Bancolombia, Nequi y Daviplata. Nuestro asesor te proporcionará los datos necesarios al momento de la compra.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <button class="faq-question">¿Hacen envíos a todo el país?</button>
+                    <div class="faq-answer">
+                        <p>¡Sí! Realizamos envíos a toda Colombia a través de las principales empresas de mensajería. El costo y tiempo de entrega dependerán de tu ubicación.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="main-footer" id="creditos">
@@ -82,7 +107,7 @@
 
     <div class="modal-overlay" id="product-modal">
         <div class="modal-content">
-            <span class="close-modal" id="close-modal-btn">&times;</span>
+            <button class="close-modal" id="close-modal-btn">&times;</button>
             <img src="" alt="Imagen del producto" class="modal-image" id="modal-img">
             <div class="modal-details">
                 <h2 id="modal-name"></h2>
@@ -98,7 +123,7 @@
     </div>
 
     <div id="install-prompt">
-        ¡Lleva nuestra tienda contigo! Haz clic para instalar 🔽
+        <p>¡Lleva nuestra tienda contigo! <b>Haz clic aquí para instalarla</b> y accede más rápido.</p>
     </div>
 
     <script src="script.js" defer></script>
